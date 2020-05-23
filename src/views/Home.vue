@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-
+    <Intern v-for="intern of interns" :key="intern.id" :intern="intern" />
   </div>
 </template>
 
@@ -9,25 +9,21 @@
 export default {
   name: 'Home',
   components: {
+    Intern: () => import(/* webpackChunkName: "Intern" */ '../components/organisms/Intern/Intern.vue')
   },
   data() {
     return {
-      apiData: ''
+      interns: ''
     };
   },
   methods: {
-    async get(index) {
-      let response = await this.$axios.get(
-        `users?page=${index}&per_page=30]`
-      );
-      this.apiData = [...this.apiData, response.data];
-    },
-    async post() {
-      await this.$axios.post('users', {
-        name: 'morpheus',
-        job: 'leader'
-      });
+    async getData () {
+      let res = await this.$axios.get('users?per_page=12');
+      this.interns = res.data.data
     }
-  }
+  },
+  created () {
+    this.getData();
+  },
 };
 </script>
