@@ -9,7 +9,7 @@
 export default {
   name: 'Home',
   components: {
-    Intern: () => import(/* webpackChunkName: "Intern" */ '../components/organisms/Intern/Intern.vue')
+    Intern: () => import(/* webpackChunkName: "Intern" */ '../../components/organisms/Intern/Intern.vue')
   },
   data() {
     return {
@@ -27,3 +27,5 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped src="./Home.scss" />
+

@@ -1,10 +1,10 @@
-// const path = require('path');
+const path = require('path');
 
 module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "@/styles/reset.scss";`
+        prependData: `@import "src/styles/reset.scss";`
       }
     }
   },
@@ -12,7 +12,7 @@ module.exports = {
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',
-      patterns: []
+      patterns: [path.resolve(__dirname, './src/assets/styles/*.scss')]
     }
   }
 };
