@@ -1,6 +1,6 @@
-import Vue from "vue";
+import Vue from 'vue';
 import './plugins/axios'
-import App from "./App.vue";
+import App from './App.vue';
 import store from './store'
 import router from './router'
 
@@ -13,4 +13,4 @@ new Vue({
   render: function(h) {
     return h(App);
   }
-}).$mount("#app");
+}).$mount('#app');
