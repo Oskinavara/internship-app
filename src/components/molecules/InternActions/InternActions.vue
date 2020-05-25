@@ -1,13 +1,22 @@
 <template>
   <div class="intern-actions">
-    <!-- <BaseButton /> -->
+    <SquareButton :link="`/edit/${intern.id}`"/>
     <!-- <BaseButton /> -->
   </div>
 </template>
 
 <script>
   export default {
-    name: 'InternActions'
+    name: 'InternActions',
+    props: {
+      intern: {
+        type: Object,
+        required: true
+      },
+    },
+    components: {
+      SquareButton: () => import(/* webpackChunkName: "SquareButton" */ '@/components/atoms/SquareButton/SquareButton.vue'),
+    },
   }
 </script>
 

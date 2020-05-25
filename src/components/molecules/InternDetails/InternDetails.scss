@@ -1,7 +1,19 @@
 .intern-details {
+  padding: 0 0.5rem;
+
   &__name {
     text-align: left;
-    margin-bottom: 0.5rem;
+    color: $dark-gray;
+    margin-bottom: $space-0;
     font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__email {
+    text-align: left;
+    color: $text-gray;
+    font-size: 12px;
+    max-width: 100%;
+    word-break: break-all;
   }
 }

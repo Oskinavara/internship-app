@@ -1,7 +1,9 @@
 .intern-photo {
   height: 4rem;
+  min-height: 4rem;
   width: 4rem;
-  margin-right: 2rem;
+  min-width: 4rem;
+  
   &__image {
     height: 100%;
     width: 100%;

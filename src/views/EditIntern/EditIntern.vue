@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    Edit intern
   </div>
 </template>
 

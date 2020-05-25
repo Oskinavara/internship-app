@@ -8,9 +8,22 @@ $white: #FFF;
 // text //
 
 $dark-gray: #333333;
-$text-gray: #bfbfbf;
+$text-gray: #999;
 
 
 // app color palette //
 
-$primary: #682A77;
+$primary--lighter: #A55BB8;
+$primary--light: #903CA5;
+$primary: #86269D;
+$primary--dark: #790E93;
+$primary--darker: #64077B;
+
+
+// SPACES //
+
+$space-0: 0.5rem;
+$space-1: 1rem;
+$space-2: 1.5rem;
+$space-3: 2rem;
+$space-4: 2.5rem;

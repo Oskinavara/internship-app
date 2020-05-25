@@ -19,7 +19,7 @@ export default {
   methods: {
     async getData () {
       let res = await this.$axios.get('users?per_page=12');
-      this.interns = res.data.data
+      this.interns = res.data.data;
     }
   },
   created () {

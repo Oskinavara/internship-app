@@ -4,7 +4,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "src/styles/reset.scss";`
+        prependData: `@import "src/styles/main.scss";`
       }
     }
   },

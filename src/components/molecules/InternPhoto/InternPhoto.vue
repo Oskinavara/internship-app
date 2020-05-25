@@ -1,6 +1,6 @@
 <template functional>
   <div class="intern-photo">
-    <img :src="props.imageSrc" :alt="props.imageAlt" class="intern-photo__image">
+    <img :src="props.intern.avatar" alt="Intern photograph" class="intern-photo__image">
   </div>
 </template>
 
@@ -8,15 +8,11 @@
   export default {
     name: 'InternPhoto',
     props: {
-      imageSrc: {
-        type: String,
-        required: true
-      },
-      imageAlt: {
-        type: String,
+      intern: {
+        type: Object,
         required: true
       }
-    },
+  },
   }
 </script>
 
