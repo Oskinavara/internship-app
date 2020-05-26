@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__counter {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    color: $white;
+  }
+
+  .square-button {
+    width: $space-4;
+    height: $space-4;
+    background: white;
+
+    &__icon {
+      fill: green;
+    }
+
+    @include media-m {
+      width: $space-5;
+      height: $space-5;
+    }
+  }
+}

@@ -6,7 +6,11 @@
 
 <script>
   export default {
-    name: 'DefaultLayout'
+    name: 'DefaultLayout',
+    created () {
+      // This is to prevent editing non-existant intern after refresh
+      this.$router.push('/');
+    },
   }
 </script>
 
