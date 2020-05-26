@@ -1,7 +1,7 @@
 <template>
   <div class="edit">
-    <InternPhoto :intern="selectedIntern"/>
-    <EditForm />
+    <InternPhoto :intern="selectedIntern" v-if="isEditView"/>
+    <EditForm :isEditView="isEditView"/>
   </div>
 </template>
 
@@ -10,6 +10,13 @@ import { mapState } from 'vuex'
 
   export default {
     name: 'EditIntern',
+    props: {
+      isEditView: {
+        type: Boolean,
+        default: true,
+        required: false
+      },
+    },
     computed: {
       ...mapState([
         'selectedIntern'

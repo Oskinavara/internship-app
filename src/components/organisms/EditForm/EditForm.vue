@@ -24,7 +24,11 @@
         Cancel
       </BaseButton>
     </div >
-    <BaseButton type="danger" @click.native="removeIntern">
+    <BaseButton 
+      v-if="isEditView"
+      type="danger" 
+      @click.native="removeIntern"
+    >
       Remove
     </BaseButton>
   </form>
@@ -42,6 +46,13 @@
           avatar: ''
         }
       }
+    },
+    props: {
+      isEditView: {
+        type: Boolean,
+        default: false,
+        required: false
+      },
     },
     components: {
       BaseInput: () => import(/* webpackChunkName: "BaseInput" */ '@/components/atoms/BaseInput/BaseInput.vue'),

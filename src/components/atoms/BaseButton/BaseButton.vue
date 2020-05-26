@@ -36,6 +36,11 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 
+    &:focus {
+      outline: 0; 
+      box-shadow: 2px 2px 10px rgba($dark-gray, 0.45);
+    }
+
     &--danger {
       border: 2px solid $button-danger;
       background: $button-danger;
