@@ -6,5 +6,13 @@ export default {
     state.formData = {
       ...newData
     }
+  },
+  clearForm(state) {
+    state.formData = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      avatar: ''
+    }
   }
 }

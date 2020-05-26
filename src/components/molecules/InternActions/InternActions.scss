@@ -1,8 +1,24 @@
 .intern-actions {
+  display: flex;
+
   .square-button {
     width: $space-4;
     min-width: $space-4;
     height: $space-4;
     min-height: $space-4;
+    margin-left: $space-0;
+
+    &--danger {
+      display: none;
+      
+      @include media-s {
+        display: block;
+      }
+    }
+
+    @include media-m {
+      width: $space-5;
+      height: $space-5;
+    }
   }
 }
