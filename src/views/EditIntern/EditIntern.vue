@@ -1,5 +1,5 @@
 <template>
-  <div class="edit">
+  <div class="edit-intern">
     <InternPhoto :intern="selectedIntern" v-if="isEditView"/>
     <EditForm :isEditView="isEditView"/>
   </div>
@@ -29,12 +29,4 @@ import { mapState } from 'vuex'
   }
 </script>
 
-<style lang="scss" scoped>
-  .edit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: $white;
-    padding: $space-2;
-  }
-</style>
+<style lang="scss" scoped src='./EditIntern.scss' />

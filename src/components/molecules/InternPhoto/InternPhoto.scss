@@ -9,10 +9,10 @@
   }
 
   &--rounded {
-    height: 4rem;
-    min-height: 4rem;
-    width: 4rem;
-    min-width: 4rem;
+    height: $space-7;
+    min-height: $space-7;
+    width: $space-7;
+    min-width: $space-7;
 
     .intern-photo__image {
       border-radius: 50%;

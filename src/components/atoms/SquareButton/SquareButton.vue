@@ -4,7 +4,7 @@
     :to="link"
     class="square-button"
   >
-    <img src="@/assets/icons/edit.svg" alt="Edit icon" class="square-button__icon">
+    <img :src="iconSrc" alt="Edit icon" class="square-button__icon">
   </component>
 </template>
 
@@ -16,6 +16,11 @@
         type: String,
         default: ''
       },
+      iconSrc: {
+        type: String,
+        default: '',
+        required: false
+      }
     },
   }
 </script>

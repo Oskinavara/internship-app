@@ -27,10 +27,10 @@
   .base-button {
     height: $space-4;
     background: transparent;
-    border: 2px solid $primary--darker;
+    border: 2px solid $primary--darker;   
     border-radius: 4px;
     color: $primary--darker;
-    padding: 0 $space-2;
+    padding: 0 $space-1;
     line-height: $space-4;
     font-weight: bold;
     text-transform: uppercase;
@@ -38,13 +38,14 @@
 
     &:focus {
       outline: 0; 
-      box-shadow: 2px 2px 10px rgba($dark-gray, 0.45);
+      box-shadow: 2px 2px 8px rgba($dark-gray, 0.6);
     }
 
     &--danger {
       border: 2px solid $button-danger;
       background: $button-danger;
       color: $white;
+      width: 100%;
     }
 
     &--primary {

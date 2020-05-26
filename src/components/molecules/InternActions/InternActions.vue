@@ -1,6 +1,10 @@
 <template>
   <div class="intern-actions">
-    <SquareButton :link="`/edit/${intern.id}`" @click.native="edit(intern)" />
+    <SquareButton 
+      :link="`/edit/${intern.id}`" 
+      :iconSrc="require('@/assets/icons/edit.svg')" 
+      @click.native="edit(intern)" 
+    />
     <!-- <BaseButton /> -->
   </div>
 </template>
