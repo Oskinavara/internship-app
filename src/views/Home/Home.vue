@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Intern v-for="intern of interns" :key="intern.id" :intern="intern" />
+    <NewIntern />
   </div>
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   name: 'Home',
   components: {
-    Intern: () => import(/* webpackChunkName: "Intern" */ '../../components/organisms/Intern/Intern.vue')
+    Intern: () => import(/* webpackChunkName: "Intern" */ '../../components/organisms/Intern/Intern.vue'),
+    NewIntern: () => import(/* webpackChunkName: "NewIntern" */ '../../components/organisms/NewIntern/NewIntern.vue'),
   },
   data() {
     return {
