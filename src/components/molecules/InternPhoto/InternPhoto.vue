@@ -1,5 +1,5 @@
 <template functional>
-  <div class="intern-photo">
+  <div :class="['intern-photo', {'intern-photo--rounded': props.rounded}]">
     <img :src="props.intern.avatar" alt="Intern photograph" class="intern-photo__image">
   </div>
 </template>
@@ -11,6 +11,11 @@
       intern: {
         type: Object,
         required: true
+      },
+      rounded: {
+        type: Boolean,
+        default: false,
+        required: false
       }
   },
   }

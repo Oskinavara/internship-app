@@ -1,26 +1,14 @@
 <template>
   <div class="intern">
-    <component 
-      v-for="component in internComponents" 
-      :key="component" 
-      :is="component" 
-      :intern="intern"
-    />
+    <InternPhoto :intern="intern" rounded />
+    <InternDetails :intern="intern" />
+    <InternActions :intern="intern" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'Intern',
-  data() {
-    return {
-      internComponents: [
-        'InternPhoto',
-        'InternDetails',
-        'InternActions'
-      ]
-    }
-  },
   props: {
     intern: {
       type: Object,
