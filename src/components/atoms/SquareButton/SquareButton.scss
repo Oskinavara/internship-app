@@ -3,9 +3,12 @@
   background: $primary--light;
   padding: $space-0;
   border-radius: 4px;
-  box-shadow: 2px 2px 10px rgba(black, 0.5);
-  box-shadow: 1px 1px 5px rgba(black, 0.7);
-  transition: box-shadow 0.5s;
+  box-shadow: 2px 2px 5px rgba($dark-gray, 0.4);
+
+  &:focus {
+    outline: 0; 
+    box-shadow: 2px 2px 10px rgba($dark-gray, 0.6);
+  } 
 
   &__icon{
     max-width: 100%;
