@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Home/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -13,12 +13,15 @@ const routes = [
   {
     path: '/add',
     name: 'AddIntern',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AddIntern.vue')
+    component: () => import(/* webpackChunkName: "EditIntern" */ '../views/EditIntern/EditIntern.vue'),
+    props: {
+      isEditView: false
+    }
   },
   {
-    path: '/edit',
+    path: '/edit/:internId',
     name: 'EditIntern',
-    component: () => import(/* webpackChunkName: "about" */ '../views/EditIntern.vue')
+    component: () => import(/* webpackChunkName: "EditIntern" */ '../views/EditIntern/EditIntern.vue')
   },
 ]
 

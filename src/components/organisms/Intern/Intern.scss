@@ -1,0 +1,13 @@
+.intern {
+  display: flex;
+  align-items: center;
+  padding: $space-1;
+  margin-bottom: $space-0;
+  max-width: 700px;
+  background: $white;
+  border-radius: 0.3rem;
+
+  .intern-actions {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,21 @@
+.intern-photo {
+  height: 60%;
+  width: 60%;
+  max-width: 200px;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &--rounded {
+    height: 4rem;
+    min-height: 4rem;
+    width: 4rem;
+    min-width: 4rem;
+
+    .intern-photo__image {
+      border-radius: 50%;
+    }
+  }
+}
