@@ -2,7 +2,13 @@
   <div class="intern-actions">
     <SquareButton 
       :link="`/edit/${intern.id}`" 
-      :iconSrc="require('@/assets/icons/edit.svg')" 
+      :iconSrc="require('@/assets/icons/pencil.svg')" 
+      @click.native="edit(intern)" 
+    />
+    <SquareButton 
+      :link="`/edit/${intern.id}`"
+      danger
+      :iconSrc="require('@/assets/icons/trash.svg')" 
       @click.native="edit(intern)" 
     />
     <!-- <BaseButton /> -->

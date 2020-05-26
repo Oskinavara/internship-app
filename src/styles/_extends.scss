@@ -1,0 +1,9 @@
+.ui-shadow {
+  box-shadow: 0 0 7px rgba($dark-gray, 0.4);
+  transition: box-shadow 0.2s;
+
+  &:focus, &:hover {
+    outline: 0; 
+    box-shadow: 0 0 10px rgba($dark-gray, 0.8);
+  } 
+}

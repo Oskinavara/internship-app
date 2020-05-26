@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: $space-1;
-  margin-bottom: $space-2;
+  margin: 0 auto $space-2;
   max-width: 700px;
   background: $white;
   border-radius: 0.3rem;
@@ -14,14 +14,26 @@
     min-width: $space-7;
     background: $feather;
     border-radius: 50%;
+    @include media-m {
+      height: $space-9;
+      width: $space-9;
+    }
   }
 
   &__heading {
     padding: 0 0.5rem;
     text-align: left;
     color: $dark-gray;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 18px;
+    @include media-s {
+      font-size: 20px;
+      padding: 0 1.5rem;
+    }
+    @include media-m {
+      font-size: 26px;
+      padding: 0 2.5rem;
+    }
   }
 
   .square-button {
@@ -30,5 +42,9 @@
     height: $space-4;
     min-height: $space-4;
     margin-left: auto;
+    @include media-m {
+      width: $space-5;
+      height: $space-5;
+    }
   }
 }

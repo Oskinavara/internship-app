@@ -2,7 +2,7 @@
   <component 
     :is="link ? 'router-link' : 'button'"
     :to="link"
-    class="square-button"
+    :class="['square-button', {'square-button--danger': danger}]"
   >
     <img :src="iconSrc" alt="Edit icon" class="square-button__icon">
   </component>
@@ -19,6 +19,11 @@
       iconSrc: {
         type: String,
         default: '',
+        required: false
+      },
+      danger: {
+        type: Boolean,
+        default: false,
         required: false
       }
     },

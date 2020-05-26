@@ -1,12 +1,24 @@
 .intern-details {
   padding: 0 0.5rem;
+  @include media-s {
+    padding: 0 1.5rem;
+  }
+  @include media-m {
+    padding: 0 2.5rem;
+  }
 
   &__name {
     text-align: left;
     color: $dark-gray;
     margin-bottom: $space-0;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 16px;
+    @include media-s {
+      font-size: 18px;
+    }
+    @include media-m {
+      font-size: 26px;
+    }
   }
 
   &__email {
@@ -14,6 +26,16 @@
     color: $text-gray;
     font-size: 12px;
     max-width: 100%;
+    font-weight: 400;
     word-break: break-all;
+    @include media-s {
+      font-size: 14px;
+    }
+    @include media-m {
+      font-size: 18px;
+    }
+    @include media-l {
+      font-size: 18px;
+    }
   }
 }
