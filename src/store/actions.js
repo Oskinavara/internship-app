@@ -3,7 +3,7 @@ import { errorHandler } from '@/logic/helpers/errorHandler.js'
 const BASE_URL = 'https://reqres.in/api/'
 
 export default {
-  async editIntern({state}, id) {
+  async editIntern({ state }, id) {
     await axios.put(`${BASE_URL}users/${id}`, {
       id,
       email: state.formData.email,
@@ -26,5 +26,15 @@ export default {
     await axios.delete(`${BASE_URL}users/${id}`)
     .then(res => console.log(res))
     .catch(errorHandler)
-  }
+  },
+  async addIntern({ state }) {
+    await axios.post(`${BASE_URL}users`, {
+      first_name: state.formData.firstName,
+      last_name: state.formData.lastName,
+      avatar: state.formData.avatar,
+      email: state.formData.email,
+    })
+    .then(res => console.log(res))
+    .catch(errorHandler)
+  },
 }
