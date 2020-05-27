@@ -14,38 +14,38 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex';
+  import { mapMutations, mapActions } from 'vuex';
 
-export default {
-  name: 'InternActions',
-  props: {
-    intern: {
-      type: Object,
-      required: true
+  export default {
+    name: 'InternActions',
+    props: {
+      intern: {
+        type: Object,
+        required: true
+      },
     },
-  },
-  methods: {
-    ...mapMutations([
-      'selectIntern',
-      'updateForm'
-    ]),
-    ...mapActions([
-      'removeIntern'
-    ]),
-    edit() {
-      this.updateForm({
-        firstName: this.intern.first_name,
-        lastName: this.intern.last_name,
-        email: this.intern.email,
-        avatar: this.intern.avatar,
-      });
-      this.selectIntern(this.intern);
-    }
-  },
-  components: {
-    SquareButton: () => import(/* webpackChunkName: "SquareButton" */ '@/components/atoms/SquareButton/SquareButton.vue'),
-  },
-}
+    methods: {
+      ...mapMutations([
+        'selectIntern',
+        'updateForm'
+      ]),
+      ...mapActions([
+        'removeIntern'
+      ]),
+      edit() {
+        this.updateForm({
+          firstName: this.intern.first_name,
+          lastName: this.intern.last_name,
+          email: this.intern.email,
+          avatar: this.intern.avatar,
+        });
+        this.selectIntern(this.intern);
+      }
+    },
+    components: {
+      SquareButton: () => import(/* webpackChunkName: "SquareButton" */ '@/components/atoms/SquareButton/SquareButton.vue'),
+    },
+  }
 </script>
 
 <style lang="scss" scoped src="./InternActions.scss" />
