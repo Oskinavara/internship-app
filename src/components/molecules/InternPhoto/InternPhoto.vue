@@ -17,7 +17,7 @@
         default: false,
         required: false
       }
-  },
+    },
   }
 </script>
 

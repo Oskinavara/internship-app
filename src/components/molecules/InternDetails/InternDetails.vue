@@ -16,7 +16,7 @@
       intern: {
         type: Object,
         required: true
-      },
+      }
     },
   }
 </script>

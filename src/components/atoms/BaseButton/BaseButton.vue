@@ -1,9 +1,9 @@
-<template>
+<template functional>
   <button 
     :class="[
       'base-button',
-      {'base-button--danger': type === 'danger'},
-      {'base-button--primary': type === 'primary'},
+      {'base-button--danger': props.type === 'danger'},
+      {'base-button--primary': props.type === 'primary'},
     ]" 
   >
     <slot />
