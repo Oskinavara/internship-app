@@ -21,5 +21,10 @@ export default {
       console.log(response.data)
     await commit('getInterns', response.data.data)
     await commit('setTotalPages', response.data.total_pages)
+  },
+  async removeIntern(context, id) {
+    await axios.delete(`${BASE_URL}users/${id}`)
+    .then(res => console.log(res))
+    .catch(errorHandler)
   }
 }
