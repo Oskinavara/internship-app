@@ -25,8 +25,10 @@ export default {
   methods: {
     ...mapActions(['getInterns']),
     goToNextPage () {
-      this.page += 1;
-      this.getInterns(this.page);
+      if(this.page < this.totalPages) {
+        this.page += 1;
+        this.getInterns(this.page);
+      }
     },
     goToPrevPage () {
       if(this.page > 1) {

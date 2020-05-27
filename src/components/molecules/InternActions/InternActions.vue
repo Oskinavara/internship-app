@@ -1,35 +1,36 @@
 <template>
   <div class="intern-actions">
     <SquareButton 
-      :link="`/edit/${intern.id}`" 
       :iconSrc="require('@/assets/icons/pencil.svg')" 
+      :link="`/edit/${intern.id}`" 
       @click.native="edit(intern)" 
     />
     <SquareButton 
-      :link="`/edit/${intern.id}`"
-      danger
       :iconSrc="require('@/assets/icons/trash.svg')" 
-      @click.native="edit(intern)" 
+      @click.native="removeIntern(intern.id)" 
+      danger
     />
-    <!-- <BaseButton /> -->
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapActions } from 'vuex';
 
-  export default {
-    name: 'InternActions',
-    props: {
-      intern: {
-        type: Object,
-        required: true
-      },
+export default {
+  name: 'InternActions',
+  props: {
+    intern: {
+      type: Object,
+      required: true
     },
-    methods: {
+  },
+  methods: {
     ...mapMutations([
       'selectIntern',
       'updateForm'
+    ]),
+    ...mapActions([
+      'removeIntern'
     ]),
     edit() {
       this.updateForm({
@@ -41,10 +42,10 @@ import { mapMutations } from 'vuex';
       this.selectIntern(this.intern);
     }
   },
-    components: {
-      SquareButton: () => import(/* webpackChunkName: "SquareButton" */ '@/components/atoms/SquareButton/SquareButton.vue'),
-    },
-  }
+  components: {
+    SquareButton: () => import(/* webpackChunkName: "SquareButton" */ '@/components/atoms/SquareButton/SquareButton.vue'),
+  },
+}
 </script>
 
 <style lang="scss" scoped src="./InternActions.scss" />
