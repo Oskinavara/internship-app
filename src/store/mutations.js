@@ -14,5 +14,11 @@ export default {
       email: '',
       avatar: ''
     }
+  },
+  getInterns(state, interns) {
+    state.currentPage = [...interns]
+  },
+  setTotalPages(state, number) {
+    state.totalPages = number
   }
 }
