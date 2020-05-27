@@ -71,8 +71,13 @@
         this.$router.push('/')
       },
       saveIntern() {
-        let internID = this.$store.state.selectedIntern.id;
-        this.$store.dispatch('editIntern', internID);
+        if(this.isEditView) {
+          let internID = this.$store.state.selectedIntern.id;
+          this.$store.dispatch('editIntern', internID);
+        }
+        else {
+          this.$store.dispatch('addIntern');
+        }
         this.$router.push('/');
       }
     },
