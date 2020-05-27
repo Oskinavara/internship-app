@@ -17,7 +17,7 @@
       v-model="formData.avatar"
     />
     <div class="edit-form__buttons-wrapper">
-      <BaseButton type="primary" primary @click.native="goBack">
+      <BaseButton type="primary" primary @click.native="saveIntern">
         Save
       </BaseButton>
       <BaseButton @click.native="goBack">
@@ -69,6 +69,11 @@
     methods: {
       goBack() {
         this.$router.push('/')
+      },
+      saveIntern() {
+        let internID = this.$store.state.selectedIntern.id;
+        this.$store.dispatch('editIntern', internID);
+        this.$router.push('/');
       }
     },
     created () {

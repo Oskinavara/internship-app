@@ -5,5 +5,7 @@ export default () => ({
     lastName: '',
     email: '',
     avatar: ''
-  }
+  },
+  currentPage: [],
+  totalPages: 0
 })
