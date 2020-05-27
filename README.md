@@ -1,4 +1,4 @@
 # internship-app
 
-## [Live Demo](https://oskinavaratft.netlify.app/)
+## [Live Demo](https://internship-oskinavara.netlify.app/)
 
