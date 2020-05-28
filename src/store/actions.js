@@ -19,7 +19,6 @@ export default {
     let response = await axios
       .get(`${BASE_URL}users?per_page=6&page=${page}`)
       .catch(errorHandler)
-      console.log(response.data)
     await commit('getInterns', response.data.data)
     await commit('setTotalPages', response.data.total_pages)
   },

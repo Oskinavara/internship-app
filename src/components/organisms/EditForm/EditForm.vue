@@ -2,64 +2,64 @@
   <form @submit.prevent class="edit-form">
     <BaseInput 
       label="First Name" 
-      v-model="$v.formData.firstName.$model"
+      v-model.trim="$v.form.firstName.$model"
       :validations="[
         {
-          condition: !$v.formData.firstName.required,
+          condition: !$v.form.firstName.required,
           text: 'Field is required'
         },
         {
-          condition: !$v.formData.firstName.alpha,
+          condition: !$v.form.firstName.alpha,
           text: 'Numbers are not allowed'
         },
         {
-          condition: !$v.formData.firstName.minLength,
+          condition: !$v.form.firstName.minLength,
           text: 'Name must have at least 2 letters'
         }
       ]"
     />
     <BaseInput 
       label="Last Name"
-      v-model="$v.formData.lastName.$model"
+      v-model.trim="$v.form.lastName.$model"
       :validations="[
         {
-          condition: !$v.formData.lastName.required,
+          condition: !$v.form.lastName.required,
           text: 'Field is required'
         },
         {
-          condition: !$v.formData.lastName.alpha,
+          condition: !$v.form.lastName.alpha,
           text: 'Numbers are not allowed'
         },
         {
-          condition: !$v.formData.lastName.minLength,
+          condition: !$v.form.lastName.minLength,
           text: 'Name must have at least 2 letters'
         }
       ]"
     />
     <BaseInput 
       label="E-mail" 
-      v-model="$v.formData.email.$model"
+      v-model.trim="$v.form.email.$model"
       :validations="[
         {
-          condition: !$v.formData.email.required,
+          condition: !$v.form.email.required,
           text: 'Field is required'
         },
         {
-          condition: !$v.formData.email.email,
+          condition: !$v.form.email.email,
           text: 'Please enter a valid e-mail address'
         },
       ]"
     />
     <BaseInput
       label="Avatar"
-      v-model="$v.formData.avatar.$model"
+      v-model.trim="$v.form.avatar.$model"
       :validations="[
         {
-          condition: !$v.formData.avatar.required,
+          condition: !$v.form.avatar.required,
           text: 'Field is required'
         },
         {
-          condition: !$v.formData.avatar.url,
+          condition: !$v.form.avatar.url,
           text: 'It has to be a valid url'
         },
       ]"
@@ -68,7 +68,7 @@
       <BaseButton 
         type="primary" 
         primary
-        :disabled="$v.formData.$error"
+        :disabled="$v.form.$invalid"
         @click.native="saveIntern"
       >
         Save
@@ -92,6 +92,16 @@
 
   export default {
     name: 'EditForm',
+    data() {
+      return {
+        form: {
+          firstName: '',
+          lastName: '',
+          avatar: '',
+          email: '',
+        }
+      }
+    },
     props: {
       isEditView: {
         type: Boolean,
@@ -100,7 +110,7 @@
       },
     },
     validations: {
-      formData: {
+      form: {
         firstName: {
           required,
           minLength: minLength(2),
@@ -125,6 +135,11 @@
       BaseInput: () => import(/* webpackChunkName: "BaseInput" */ '@/components/atoms/BaseInput/BaseInput.vue'),
       BaseButton: () => import(/* webpackChunkName: "BaseButton" */ '@/components/atoms/BaseButton/BaseButton.vue'),
     },
+    created () {
+      setTimeout(() => {
+        this.form = {...this.$store.state.form}
+      }, 0);
+    },
     methods: {
       goBack() {
         this.$router.push('/')
@@ -138,6 +153,9 @@
           this.$store.dispatch('addIntern');
         }
         this.$router.push('/');
+      },
+      removeIntern() {
+        this.$store.dispatch('removeIntern', this.$store.state.selectedIntern.id);
       }
     }
   }
