@@ -1,6 +1,6 @@
 export default () => ({
   selectedIntern: {},
-  formData: {
+  form: {
     firstName: '',
     lastName: '',
     email: '',
