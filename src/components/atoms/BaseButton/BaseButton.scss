@@ -24,4 +24,12 @@
     background: $button-primary;
     color: $white;
   }
+
+  &--disabled {
+    opacity: 0.5;
+    background: $dark-gray;
+    border: $dark-gray;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }

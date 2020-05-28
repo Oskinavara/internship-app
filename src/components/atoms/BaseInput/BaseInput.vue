@@ -11,9 +11,9 @@
       class="base-input__input"
     >
     <transition name="fade">
-      <p class="base-input__validation-message" v-if="shownValidationMessage">
+      <span class="base-input__validation-message" v-if="shownValidationMessage">
         {{ shownValidationMessage }}
-      </p>
+      </span>
     </transition>
   </div>
 </template>

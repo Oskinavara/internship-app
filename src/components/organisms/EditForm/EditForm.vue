@@ -50,8 +50,8 @@
         },
       ]"
     />
-    <BaseInput 
-      label="Avatar" 
+    <BaseInput
+      label="Avatar"
       v-model="$v.formData.avatar.$model"
       :validations="[
         {
@@ -65,7 +65,12 @@
       ]"
     />
     <div class="edit-form__buttons-wrapper">
-      <BaseButton type="primary" primary @click.native="saveIntern">
+      <BaseButton 
+        type="primary" 
+        primary
+        :disabled="$v.formData.$error"
+        @click.native="saveIntern"
+      >
         Save
       </BaseButton>
       <BaseButton @click.native="goBack">
@@ -87,16 +92,6 @@
 
   export default {
     name: 'EditForm',
-    data() {
-      return {
-        formData: {
-          firstName: '',
-          lastName: '',
-          email: '',
-          avatar: ''
-        }
-      }
-    },
     props: {
       isEditView: {
         type: Boolean,
@@ -130,14 +125,6 @@
       BaseInput: () => import(/* webpackChunkName: "BaseInput" */ '@/components/atoms/BaseInput/BaseInput.vue'),
       BaseButton: () => import(/* webpackChunkName: "BaseButton" */ '@/components/atoms/BaseButton/BaseButton.vue'),
     },
-    watch: {
-      formData: {
-        handler() {
-          this.$store.commit('updateForm', this.formData)
-        },
-        deep: true
-      }
-    },
     methods: {
       goBack() {
         this.$router.push('/')
@@ -152,14 +139,7 @@
         }
         this.$router.push('/');
       }
-    },
-    created () {
-      setTimeout(() => {
-        this.formData = {
-          ...this.$store.state.formData
-        }
-      }, 0);
-    },
+    }
   }
 </script>
 
