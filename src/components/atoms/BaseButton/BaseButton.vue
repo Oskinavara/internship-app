@@ -1,10 +1,11 @@
-<template functional>
+<template>
   <button 
     :class="[
       'base-button',
-      {'base-button--danger': props.type === 'danger'},
-      {'base-button--primary': props.type === 'primary'},
-    ]" 
+      {'base-button--danger': type === 'danger'},
+      {'base-button--primary': type === 'primary'},
+      {'base-button--disabled': disabled},
+    ]"
   >
     <slot />
   </button>
@@ -19,6 +20,11 @@
         default: '',
         required: false
       },
+      disabled: {
+        type: Boolean,
+        default: false,
+        required: false
+      }
     },
   }
 </script>

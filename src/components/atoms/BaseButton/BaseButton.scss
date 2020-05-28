@@ -11,6 +11,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+  transition: all 0.3s;
 
   &--danger {
     border: 2px solid $button-danger;
@@ -23,5 +24,11 @@
     border: 2px solid $button-primary;
     background: $button-primary;
     color: $white;
+  }
+
+  &--disabled {
+    filter: grayscale(1);
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }

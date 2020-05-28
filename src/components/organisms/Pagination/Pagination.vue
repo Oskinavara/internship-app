@@ -40,4 +40,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped src='./Pagination.scss' />
+<style lang="scss" src='./Pagination.scss' />
